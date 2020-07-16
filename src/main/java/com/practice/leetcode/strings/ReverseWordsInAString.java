@@ -19,13 +19,23 @@ package com.practice.leetcode.strings;
 
 public class ReverseWordsInAString {
     public static void main(String[] args) {
-        String res= "";
-        String str = " word1     word2     word3    word4 word5 word6      ";
-        String[] arrOfStr = str.split("[ ]+");
+        // Result string
+        String result= "";
 
-        int len = arrOfStr.length;
+        // Sample input string
+        String input = " word1     word2     word3    word4 word5 word6      ";
+
+        // Split the input to get each word as a string in arrOfStrings
+        // split() method takes regex as input
+        String[] arrOfStrings = input.split("[ ]+");
+
+        int len = arrOfStrings.length;
+
+        // Result string will be concatenation of strings in reverse order and concat with a space
         for (int i=0; i<len; i++)
-            res = res.concat(arrOfStr[len-i-1]).concat(" ");
-        System.out.print(res.trim());
+            result = result.concat(arrOfStrings[len-i-1]).concat(" ");
+
+        // trim() on result to remove trailing space
+        System.out.print(result.trim());
     }
 }
